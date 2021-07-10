@@ -40,9 +40,9 @@ const Layout = ({ children, location }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <AnimatePresence>
+    <div id="scroll-container" className="content-inner" data-scroll-container>
+      <AnimatePresence exitBeforeEnter>
+        <Header siteTitle={data.site.siteMetadata.title} />
         <motion.main
           key={location.pathname}
           variants={variants}
@@ -50,10 +50,10 @@ const Layout = ({ children, location }) => {
           animate="enter"
           exit="exit"
         >
-        {children}
+          {children}
         </motion.main>
       </AnimatePresence>
-    </>
+    </div>
   )
 }
 

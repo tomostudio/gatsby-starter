@@ -1,6 +1,6 @@
 body, html {
 	/* Force vertical scroll bar, prevent shifting content, works best on Windows */
-	min-height: 101%;
+	min-height: 100%;
 }
 
 a {
@@ -9,4 +9,47 @@ a {
 
 [class*='transition'] {
 	@apply duration-300;
+}
+
+body, html, #scroll-container {
+	scroll-behavior: smooth;
+}
+
+.fixed-when-scroll {
+	transition: all ease 350ms;
+	@apply fixed !important;
+
+	transform: translateY(-3.65rem) !important;
+
+	@screen md {
+		@apply hidden;
+	}
+}
+
+
+[data-direction="up"] .fixed-when-scroll {
+	transform: translateY(0px) !important;
+}
+
+
+@screen md {
+	html.has-scroll-smooth {
+		overflow: hidden;
+	}
+
+	.has-scroll-smooth body {
+		overflow: hidden;
+	}
+	html.has-scroll-dragging {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	/* Specifying the scroll container manually */
+	.has-scroll-smooth #___gatsby,
+	.has-scroll-smooth [data-scroll-container] {
+		min-height: 100vh;
+	}
 }

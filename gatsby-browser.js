@@ -1,12 +1,13 @@
 import React from "react";
 import Layout from "./src/components/layout";
 
-const transitionDelay = 350;
+const transitionDelay = 750;
 
 export const wrapPageElement = ({ element, props }) => {
   return <Layout {...props}>{element}</Layout>;
 };
 
+//Framer Motion Transition Delay and Update scroll Position.
 export const shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition

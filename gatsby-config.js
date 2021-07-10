@@ -1,10 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby x Tailwind x Framer Motion`,
-    description: `An opinionated starter for Gatsby v2 with TailwindCSS, PostCSS and Framer Motion page transitions.`,
-    author: `@samuelgoddard`,
+    title: `Gatsby x Tailwind x Framer Motion x Locomotive Scroll`,
+    description: `An opinionated starter for Gatsby v3 with TailwindCSS, PostCSS, Locomotive and Framer Motion page transitions. based on Samual Goddard Gatsby Starter`,
+    author: `@hendhyhutomo`,
   },
   plugins: [
+    "gatsby-plugin-webpack-bundle-analyser-v2",
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -14,6 +15,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

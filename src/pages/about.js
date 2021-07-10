@@ -1,6 +1,8 @@
 import React from "react"
-import SEO from "../components/seo"
+import SEOComponent from "../components/seo"
 import { motion } from 'framer-motion'
+import { SmoothScrollProvider } from "../components/locomotiveScroll"
+
 
 const duration = 0.35
 
@@ -24,7 +26,13 @@ const item = {
 const AboutPage = () => {
   return (
     <>
-      <SEO title="About" />
+      <SEOComponent title="About" />
+      <SmoothScrollProvider
+        options={{
+          smooth: true,
+          lerp: 0.12
+        }}
+      >
       <motion.section
         variants={container}
         initial="hidden" 
@@ -59,6 +67,7 @@ const AboutPage = () => {
           <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </motion.div>
       </motion.section>
+      </SmoothScrollProvider>
     </>
   )
 }
